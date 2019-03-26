@@ -1,0 +1,42 @@
+<h2>Project 2- Every Breathe You Take</h2>
+
+<p>by <a href="https://vkumar33.github.io/">Vikas Kumar </a> <a href= " https://sites.google.com/uic.edu/yazhinirajesh/project-2">& Yazhini Priyadharshini Rajesh</a></p>
+
+<p>The idea behind this project is to visualize the air quality of United States and how it has changed in the past 40 years. Data used in this project is taken from the official website of <a href="https://aqs.epa.gov/aqsweb/airdata/download_files.html">United States Environmental Protection Agency</a>.We will use this data to try and find out some interesting trends in air quality of various US counties. Project 2 combines Project 1 with hourly as well as daily data files to plot useful visualisations to find how to look at the trends of the pollutants and AQI parameters at a daily and hourly level. Inferences can be seen over here. In addition to USA, we have also taken data from Australia and the data is from 18th December 2018 to 18th March 2019. This gives us a way to compare different parts of the world and gives us a way to find out how global warming affects the world. 
+
+</p>
+
+<p> <a href="https://aqs.epa.gov/aqsweb/airdata/download_files.html/">Data Used</a> 
+
+We have csv files (year, hourly wise) which contain air quality information regarding all the US states and counties.
+
+</p>
+
+<h2>Now lets go over various tabs of this project</h2>
+<p></p>
+
+	<h3>AQI Quality</h3>
+    <p>In this part of the project, we visualize the air quality of any US county using Line graphs, bar graphs and pie charts. On the left side of the sidebar we first select the year and then the state and its corresponding county for which we want to plot the graphs. 1st we have a table which displays the AQI quality (in no of days) for that county in that particular year. 2nd we have a line chart which displays the Maximum AQI , median AQI and 90th percentile of AQI over the past 40 years. Then we have a pie chart which displays the percentage of good, moderate, Unhealthy, Unhealthy (for sensitive people), Very unhealthy and hazardous days for that county in that particular year. And lastly we have a bar graph which shows the same thing but it displays the no of days instead of percentage of days. </p>
+    <p></p>
+
+    <h3>Pollutant Types</h3>
+    <p>In here we visualize the types of pollutants of any US county using Line graph, bar graph and pie chart. We also have a map which pin points the location of that particular county in the world map. We have different types of pollutants like CO, NO2, Ozone, PM 2.5, PM 10 and SO2 which we try to plot the percentage of, for each county in a particular year. </p>
+
+    <h3>"B-AQI Comparision and Heat Map </h3>
+    <p>Here, we have the daily AQI data for that year as line chart and see what pollutant was contributing the most to the AQI for each of those days and we also see a stacked bar chart and table for each month of that year showing the number of days where the AQI was good / moderate / unhealthy for sensitive / unhealthy / very unhealthy / hazardous / unknown. A heat map is plotted depending on the annual sample measurement for the different types of pollutants like CO, NO2, Ozone, PM 2,5, PM 10 and SO2.  </p>
+
+    <h3>" A- Hourly Data Comparison and Pollutant Heat Map" </h3>
+    <p> We pick any subset or all of hourly Ozone, SO2, CO, NO2, PM2.5, PM10, wind, and temperature and show them as different lines on the same line chart and we also enhance the interface for the pollutant map to allow the user to pick the number of counties to view (i.e. give the user a slider to control how many counties are shown). We also enhance the interface for the pollutant map to allow the user to show a heatmap for any of the pollutants for a given day chosen by the user in 2018. </p>
+
+    <h3> "Australia (Grad Part)" </h3>
+    <p> We take data from online through the website OpenAQ.org where we pick a country other than the US in our case Australia where we take 5 sites with 3 different types of pollutants, and allow the user to query them as well to look at hourly trends, daily trends, as well as totals over those last 3 months.
+
+    <p></p>
+    <h3>Some interesting trends</h3>
+    <p>While we have a vast amount of information, it sometimes can be overwhelming. But the line chart under pollutant types helps in simplifying those trends. If we take a close look into the pollutant types for Cook county of Illinois over the past 40 years we can see that the amount of SO2 in the air has decreased dramatically whereas the amount of PM 2.5 has increased drastically. Looking at the year 2018, we can see month-wise data. We find out that months May, June and July have the maximum number of unhealthy days. This could be that there has been an increase in pollination or due to increased pollution as it is summer and more people are prone to travel outside that too with increased consumption of Air Conditioner. August has the maximum number of moderate days. Pollutant-wise, we can see, Ozone is at the maximum on May 27th which can explain why May has the maximum number of unhealthy days. On March 3rd, NO2 is at it's maximum and PM10 is at the maximum in May again. From 01-01-2018 to 01-31-2018, PM2.5(61104) has been at the maximum and SO2(44201) has been at its minimum. Looking at he hourly fluctuations we can see that there isn't much spikes in any of the pollutants except PM 2.5 which increased at 5:00 PM on 01-01-2018. This could be due to increase traffic being New Year and everyone is trying to find their way back to normal life. </p>
+
+
+<h3>Application</h3>
+
+<p>This application is written in R using Shiny dashboard framework. All the graphs were made using ggplot2 and plotly libraries. Graphs were made more interactive using hovering feature of Plotly library. Pre-processing of the data was done and stored in a RDA file. For the map, we used raster library. Libraries used library(shiny), library(shinydashboard), library(lubridate), library(DT), library(jpeg),library(grid), library(leaflet), library(scales), library(tidyr), library(plotly), library(magrittr), library(dplyr), library(pillar), library(tidyverse), library(ggplot2), library(readr), library(data.table), library(raster),library(viridis), library(zoo)</p>
+
